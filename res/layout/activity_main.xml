@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+    <EditText
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tenPct"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="54dp"
+        android:ems="10"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+    
+    <Button
+        android:id="@+id/tenPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="147dp"
+        android:onClick="onSubmit10"
+        android:text="10%" />
+
+    <Button
+        android:id="@+id/fifteenPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tip"
+        android:layout_toRightOf="@+id/tenPct"
+        android:onClick="onSubmit15"
+        android:text="15%" />
+
+    <Button
+        android:id="@+id/twentyPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tenPct"
+        android:layout_alignTop="@+id/tenPct"
+        android:layout_toRightOf="@+id/fifteenPct"
+        android:onClick="onSubmit20"
+        android:text="20%" />
+
+    <TextView
+        android:id="@+id/tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tenPct"
+        android:layout_alignRight="@+id/twentyPct"
+        android:layout_below="@+id/tenPct"
+        android:layout_marginTop="70dp"
+        android:text="Tip: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+</RelativeLayout>
