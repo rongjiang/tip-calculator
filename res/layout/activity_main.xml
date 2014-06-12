@@ -3,39 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="${packageName}.${activityClass}" >
-
-    <EditText
-        android:id="@+id/amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tenPct"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="54dp"
-        android:ems="10"
-        android:inputType="numberDecimal" >
-
-        <requestFocus />
-    </EditText>
     
-    <Button
-        android:id="@+id/tenPct"
+    
+    
+    <TextView
+        android:id="@+id/tipRateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="147dp"
-        android:onClick="onSubmit10"
-        android:text="10%" />
-
-    <Button
-        android:id="@+id/fifteenPct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/tip"
-        android:layout_toRightOf="@+id/tenPct"
-        android:onClick="onSubmit15"
-        android:text="15%" />
+        android:layout_alignLeft="@+id/tipSlider"
+        android:layout_below="@+id/tipSlider"
+        android:ems="10"
+        android:text="Tip Rate" />
 
     <Button
         android:id="@+id/twentyPct"
@@ -48,15 +26,61 @@
         android:text="20%" />
 
     <TextView
+        android:id="@+id/amountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/amount"
+        android:layout_marginTop="58dp"
+        android:ems="10"
+        android:text="Enter Amount ($): " />
+
+    <SeekBar
+        android:id="@+id/tipSlider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/amountLabel"
+        android:layout_alignRight="@+id/amount"
+        android:layout_below="@+id/amountLabel"
+        android:layout_marginTop="60dp" />
+
+    <EditText
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amountLabel"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <requestFocus />
+    
+    <Button
+        android:id="@+id/fifteenPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tip"
+        android:layout_toRightOf="@+id/tenPct"
+        android:onClick="onSubmit15"
+        android:text="15%" />
+
+    <Button
+        android:id="@+id/tenPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tipRateText"
+        android:layout_centerVertical="true"
+        android:onClick="onSubmit10"
+        android:text="10%" />
+
+    <TextView
         android:id="@+id/tip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tenPct"
-        android:layout_alignRight="@+id/twentyPct"
-        android:layout_below="@+id/tenPct"
-        android:layout_marginTop="70dp"
+        android:layout_alignRight="@+id/amount"
+        android:layout_below="@+id/twentyPct"
+        android:layout_marginTop="48dp"
         android:text="Tip: "
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
 
 </RelativeLayout>
